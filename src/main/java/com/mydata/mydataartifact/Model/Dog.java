@@ -1,6 +1,4 @@
 package com.mydata.mydataartifact.Model;
-import java.time.LocalDateTime;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,7 +22,4 @@ public class Dog {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
     private String firstName;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
-
 }

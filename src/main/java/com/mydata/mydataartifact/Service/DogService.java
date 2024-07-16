@@ -1,6 +1,5 @@
 package com.mydata.mydataartifact.Service;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -36,8 +35,6 @@ public class DogService {
     }
 
     public Dog saveDog (Dog dog){
-        dog.setCreatedAt(LocalDateTime.now());
-        dog.setUpdatedAt(LocalDateTime.now());
         Dog savedDog = DogRepo.save(dog);
 
         log.info("Dog with id: {} saved successfully", dog.getId());
@@ -46,9 +43,6 @@ public class DogService {
 
     public Dog updateDog (Dog dog) {
         Optional<Dog> existingDog = DogRepo.findById(dog.getId());
-        dog.setCreatedAt(existingDog.get().getCreatedAt());
-        dog.setUpdatedAt(LocalDateTime.now());
-
         Dog updatedDog = DogRepo.save(dog);
 
         log.info("Dog with id: {} updated successfully", dog.getId());
