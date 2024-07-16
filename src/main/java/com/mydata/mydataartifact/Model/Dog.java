@@ -1,8 +1,9 @@
 package com.mydata.mydataartifact.Model;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -20,15 +21,9 @@ import lombok.NoArgsConstructor;
 public class Dog {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
     private String firstName;
-    private String lastName;
-    private Integer age;
-    private String designation;
-    private String phoneNumber;
-    private LocalDate joinedOn;
-    private String address;
-    private LocalDate dateOfBirth;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
